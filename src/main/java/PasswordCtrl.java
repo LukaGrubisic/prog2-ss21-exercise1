@@ -17,11 +17,10 @@ public class PasswordCtrl {
         return false;
     }
 
-
+    // Checks if password is valid
     public static boolean checkPassword(String password) {
-        //if(password.length() >= 8 && password.length() <= 25){
-           // return true;
-        return checkLength(password) && containsLowerCaseCharacter(password)
+        return checkLength(password)
+                && containsLowerCaseCharacter(password)
                 && containsUpperCaseCharacter(password)
                 && checkDigit(password)
                 && checkSpecialSymbols(password);

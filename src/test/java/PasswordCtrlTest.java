@@ -81,6 +81,18 @@ public class PasswordCtrlTest {
         boolean expected = true;
         assertEquals(expected, actual);
     }
+    @Test
+    void correctPassword(){
+        boolean actual = PasswordCtrl.checkPassword("Hallo1chBinJ@ck");
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void incorrectPassword(){
+        boolean actual = PasswordCtrl.checkPassword("HelloWorld");
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
 
 
 }
