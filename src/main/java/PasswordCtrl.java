@@ -23,16 +23,29 @@ public class PasswordCtrl {
            // return true;
         return checkLength(password) && containsLowerCaseCharacter(password)
                 && containsUpperCaseCharacter(password)
-                && checkDigit(password);
+                && checkDigit(password)
+                && checkSpecialSymbols(password);
 
     }
+    //Check password length
     public static boolean checkLength(String password){
         return password.length() >= 8 && password.length() <= 25;
     }
-    public static boolean checkDigit(String input){
+    //Check Digit
+    public static boolean checkDigit(String input) {
         for (char chr : input.toCharArray())
-             if(Character.isDigit(chr))
-                 return true;
+            if (Character.isDigit(chr))
+                return true;
+        return false;
+        }
+
+    //Check special symbols
+    public static boolean checkSpecialSymbols(String input){
+        char [] specialSymbols = new char[]{'(',')','#','$','?','!','%','/','@'};
+        for (char chr : input.toCharArray())
+            for(char chrArray : specialSymbols)
+                if (chr == chrArray)
+                    return true;
         return false;
         }
     }

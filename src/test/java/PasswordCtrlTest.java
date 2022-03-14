@@ -58,16 +58,29 @@ public class PasswordCtrlTest {
 
     @Test
     void checkPassword_no_numbers(){
-        boolean actual = PasswordCtrl.checkPassword("Halloweltenabc");
+        boolean actual = PasswordCtrl.checkDigit("Halloweltenabc");
         boolean expected = false;
         assertEquals(expected, actual);
     }
     @Test
     void checkPassword_contains_numbers(){
-        boolean actual = PasswordCtrl.checkPassword("Hallowelten123");
+        boolean actual = PasswordCtrl.checkDigit("Hallowelten123");
         boolean expected = true;
         assertEquals(expected, actual);
 
     }
+    @Test
+    void checkPassword_no_special_symbols(){
+        boolean actual = PasswordCtrl.checkSpecialSymbols("HallomeinNameist1");
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void checkPassword_contains_special_symbols(){
+        boolean actual = PasswordCtrl.checkSpecialSymbols("HallomeinNameist1!");
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
+
 
 }
