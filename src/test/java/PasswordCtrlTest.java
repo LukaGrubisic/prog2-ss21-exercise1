@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PasswordCtrlTest {
 
+    //GitHub: https://github.com/LukaGrubisic/prog2-ss21-exercise1
 
+// In Zusammenarbeit mit Mohamad Arastu, Yassin Elwan am 14.3.22
     @Test
     void checkPassword_too_short(){
         boolean actual = PasswordCtrl.checkLength("1234567");
